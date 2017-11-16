@@ -44,10 +44,7 @@ class Diary():
 		return self.courses[course].getAverage()
 
 	def getTotalAverage(self):
-		sum = 0
-		for course in self.courses.values():
-			sum += course.getAverage()
-		return sum/len(self.courses)
+		return sum(course.getAverage() for course in self.courses.values())/len(self.courses)
 
 
 if __name__=="__main__":
